@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #0f1117;
+  color: #e8eaf0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.react-flow__node {
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+.react-flow__minimap {
+  background-color: #1a1d27 !important;
+  border: 1px solid #2e3347;
+  border-radius: 8px;
+}
+
+.react-flow__controls {
+  background-color: #1a1d27;
+  border: 1px solid #2e3347;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background-color: #1a1d27 !important;
+  border-bottom-color: #2e3347 !important;
+  fill: #8b90a7 !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: #22263a !important;
+  fill: #e8eaf0 !important;
+}
+
+.react-flow__edge-path {
+  stroke: #4f8ef7;
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #a78bfa;
+}
+
+.react-flow__connection-path {
+  stroke: #4f8ef7;
+}
+
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid #4f8ef7 !important;
+  background-color: #1a1d27 !important;
+}
+
+.react-flow__handle:hover {
+  background-color: #4f8ef7 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1d27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e3347;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4f8ef7;
+}
+
+/* Animation for simulation steps */
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sim-step-enter {
+  animation: slideInFade 0.3s ease forwards;
+}
+
+/* Form utility classes */
+.form-label {
+  @apply mb-1.5 block text-xs font-medium text-text-secondary;
+}
+
+.form-input {
+  @apply w-full rounded-lg border border-border-default bg-bg-elevated px-3 py-2 text-sm text-text-primary placeholder-text-secondary/50 outline-none transition-colors focus:border-accent-blue;
+}
+
+select.form-input {
+  @apply cursor-pointer;
+}
+
+.form-error {
+  @apply mt-1 text-xs text-accent-red;
+}
+
+.toolbar-btn {
+  @apply flex items-center gap-1.5 rounded-lg border border-border-default bg-bg-elevated px-2.5 py-1.5 text-xs font-medium text-text-secondary hover:bg-bg-surface hover:text-text-primary;
+}
+
+/* Node hover delete button */
+.workflow-node:hover .node-delete-btn {
+  opacity: 1;
+}
+
+.node-delete-btn {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
