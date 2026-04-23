@@ -110,3 +110,10 @@ The Zustand store maintains a `history` array of `{nodes, edges}` snapshots with
 - Simulation is entirely mocked — no real backend execution
 - Undo/redo does not persist across page refreshes
 - Auto-layout always uses top-to-bottom direction (LR available via `getAutoLayoutedElements(..., 'LR')`)
+
+## Submitted by
+
+**Name:** Abhyuday Singh Panwar
+
+**Registration Number:** RA2311026010365
+
